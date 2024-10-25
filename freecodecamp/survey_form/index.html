@@ -8,8 +8,39 @@
   </head>
   <body>
     <main>
-        <h1>Welcome to My Website</h1>  
+        <h1 id="title">sarbey form</h1>
+        <p id="description">a list of questions, you are to answer.</p>
     </main>
+    <form id="survey-form"> 
+        <label for="name" id="name-label">Enter your name:</label> 
+        <input type="text" id="name" placeholder="name" required> <br><br>
+        <label for="email" id="email-label">Enter your email:</label>
+        <input type="email" id="email" placeholder="email" required> <br><br>
+        <label for="email" id="number-label">Enter your age:</label>
+        <input type="number" id="number" placeholder="number" min="18" max="99"> <br><br>
+        <label for="q1">which cuisine do you love the most?</label>
+        <select name="q1" id="dropdown">
+            <option value="asian">Asian Cuisine</option>
+            <option value="mediterranean">Mediterranean Cuisine</option>
+            <option value="middle-east">Middle Eastern Cuisine</option>
+            <option value="italian">Italian Cuisine</option>
+        </select> <br><br>
+        <label for="radio-1">numbah 1</label>
+        <input type="radio" name="cuisine-love" value="1" id="radio-1"> <br><br>
+        <label for="radio-2">numbah 2</label> 
+        <input type="radio" name="cuisine-love" value="2" id="radio-2"> <br><br>
+        <input type="checkbox" value="checkbox-1" id="checkbox-1">
+        <label for="checkbox-1">me</label> <br>
+        <input type="checkbox" value="checkbox-2" id="checkbox-2">
+        <label for="checkbox-2">you</label> <br>
+        <input type="checkbox" value="checkbox-3" id="checkbox-3">
+        <label for="checkbox-3">them</label> <br>
+        <input type="checkbox" value="checkbox-4" id="checkbox-4">
+        <label for="checkbox-4">i</label> <br> <br>
+        <label for="textarea">comments.</label> <br>
+        <textarea id="textarea" name="textarea" rows="4" cols="50">comment here</textarea> <br> <br>
+        <button type="submit" id="submit">submit here</button>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>

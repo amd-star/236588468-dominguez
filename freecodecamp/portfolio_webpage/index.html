@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-    <script src="script.js"></script>
-  </body>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page-wrapper">
+<nav id="navbar">
+  <div id="nav-div">
+    <div id="link">
+    <a class="nav-link" href="#welcome-section">About</a>
+    <a class="nav-link" href="#project-section">Work</a>
+    <a class="nav-link" href="#contact">Contact</a>
+    </div>
+    </div>
+</nav>
+<div id="welcome-section">
+  <h1 id="welcome-name" class="welcome-text">Hey.</h1>
+  <p id="welcome-info" class="welcome-text">I'm Axel, and this is my personal portfolio.</p>
+</div><br><br><br><br>
+<div align="center">
+  <h1 id="project-section" class="text">Below are the projects I've completed.</h1>
+  <div>
+    <section id="projects">
+      <div class="project-tile">
+        <div>
+          <h2 class="tile-title"><a href="https://236588468-dominguezsurvey.vercel.app/" target="_blank">Survey Form</a><h2>
+          <h2 class="tile-title"><a href="https://236588468-domingueztributepage.vercel.app/" target="_blank">Tribute Page</a><h2>
+          <h2 class="tile-title"><a href="https://236588468-dominguez-techdoc.vercel.app/" target="_blank">Technical Documentation</a><h2>
+          <h2 class="tile-title"><a href="https://236588468-dominguezprodland.vercel.app/" target="_blank">Product Landing Page</a><h2>
+        </div>
+      </div>
+      
+    
+      <a href="https://github.com/amd-star/236588468-dominguez/tree/main/freecodecamp" target="_blank"><input align="center" type="button" id="profile-link" value="Repo link"></a>
+    </section>
+    </div>
+  </div><br><br>
+<div id="contact">
+  <h1 id="work-name" class="welcome-text">Let's work together :)</h1>
+  <p id="work-info" class="welcome-text">Contact me!</p><br><br>
+  <a href="https://www.linkedin.com/" target="_blank"><input type="button" class="contact-button" value="LinkedIn"></a>
+  <a href="https://www.facebook.com/" target="_blank"><input type="button" class="facebook-button" value="Facebook"></a>
+  </div>
+  <div>
+    <footer id="footer">
+      <p align="center" id="footer-text" class="text">© Created for <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></p>
+    </footer>
+  </div>
+</div>
+</body>
 </html>

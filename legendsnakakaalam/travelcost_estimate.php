@@ -15,7 +15,7 @@
     $fuel_needed = $distance / $fuel_consumption;
     $total_cost = $fuel_needed * $fuel_price;
 
-    echo "Total Travel Cost: $total_cost";
+    echo "Distance = $distance <br> Fuel Consumption = $fuel_consumption <br> Fuel Price = $fuel_price <br> Total Travel Cost: $total_cost";
     ?>
 </body>
 </html>

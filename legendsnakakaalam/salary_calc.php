@@ -14,7 +14,7 @@
 
     $net_salary = $basic_salary + $allowance - $deduction;
 
-    echo "Net Salary: $net_salary";
+    echo "Basic Salary = $basic_salary <br> Allowance = $allowance <br> Deduction = $deduction <br> Net Salary: $net_salary";
     ?>
 </body> 
 </html>

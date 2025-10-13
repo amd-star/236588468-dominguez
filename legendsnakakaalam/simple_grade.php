@@ -24,7 +24,7 @@
         $grade = 'D';
     }
 
-    echo "Average: $average, Grade: $grade";
+    echo "Math Score = $math_score <br> English Score = $english_score <br> Science Score = $science_score <br> Average: $average, Grade: $grade";
     ?>
 </body> 
 </html>

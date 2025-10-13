@@ -15,7 +15,7 @@
     $balance += $deposit;  // Deposit money
     $balance -= $withdraw; // Withdraw money
 
-    echo "Final Balance: $balance";
+    echo "Initial Balance = $balance <br> Deposit = $deposit <br> Withdraw = $withdraw <br> Final Balance: $balance";
     ?>
 </body> 
 </html>

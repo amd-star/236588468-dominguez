@@ -8,14 +8,15 @@
 <body>
     <h3>Task 8: String Manipulation</h3>
     <?php
-    $sentence = "Hello World, welcome to PHP programming!";
+    $sentence = "hello uc , hindi ko na kaya.!";
 
-    $length = strlen($sentence);
+    $length = strlen($sentence); 
     $word_count = str_word_count($sentence);
     $uppercase = strtoupper($sentence);
     $lowercase = strtolower($sentence);
 
-    echo "Length: $length, Word Count: $word_count, Uppercase: $uppercase, Lowercase: $lowercase";
+    echo "Length: $length <br>Word Count: $word_count <br>Uppercase: $uppercase <br>Lowercase: $lowercase";
+
     ?>
 </body> 
 </html>

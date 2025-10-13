@@ -11,7 +11,7 @@
     $celsius = 25;
     $fahrenheit = ($celsius * 9/5) + 32;
 
-    echo "$celsius°C is $fahrenheit°F";
+    echo "$celsius celsius is $fahrenheit fahrenheit";
     ?>
 </body> 
 </html>

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 02</title>
 </head>
+<style> 
+    body {
+        background-image: url('covenant.jpg');
+    }
+</style>
+
 <body>
     <h3>Lab 02</h3>
     <ul>

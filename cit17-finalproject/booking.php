@@ -1,66 +1,29 @@
 <?php
-session_start();
-include 'includes/db.php';
-if (!isset($_SESSION['user_id'])) header("Location: login.php");
-
-$user_id = $_SESSION['user_id'];
-$message = "";
-
-// Handle Form Submission
+session_start(); include 'includes/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $pet_id = $_POST['pet_id'];
-    $service_id = $_POST['service_id'];
-    $therapist_id = $_POST['therapist_id'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $end_time = date("H:i:s", strtotime($time) + 3600); // Dummy 1 hour duration
-
-    $sql = "INSERT INTO appointments (user_id, pet_id, service_id, therapist_id, appointment_date, start_time, end_time) 
-            VALUES ('$user_id', '$pet_id', '$service_id', '$therapist_id', '$date', '$time', '$end_time')";
-    
-    if ($conn->query($sql)) {
-        header("Location: dashboard.php");
-    } else {
-        $message = "Error: " . $conn->error;
-    }
+    $uid = $_SESSION['user_id']; $pet = $_POST['pet']; $srv = $_POST['service']; $ther = $_POST['therapist']; $date = $_POST['date']; $time = $_POST['time'];
+    $conn->query("INSERT INTO appointments (user_id, pet_id, service_id, therapist_id, appointment_date, start_time) VALUES ('$uid','$pet','$srv','$ther','$date','$time')");
+    header("Location: dashboard.php");
 }
-
-// Fetch Data for Dropdowns
-$pets = $conn->query("SELECT * FROM pets WHERE owner_id = '$user_id'");
-$services = $conn->query("SELECT * FROM services");
-$groomers = $conn->query("SELECT * FROM users WHERE role = 'therapist'");
+$pets = $conn->query("SELECT * FROM pets WHERE owner_id=".$_SESSION['user_id']);
+$srvs = $conn->query("SELECT * FROM services");
+$thers = $conn->query("SELECT * FROM users WHERE role='therapist'");
 ?>
-
 <!DOCTYPE html>
 <html>
 <head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="container mt-5">
-    <h2>Book an Appointment</h2>
-    <?php if($message) echo "<div class='alert alert-danger'>$message</div>"; ?>
-    
+<body class="container mt-5" style="max-width:500px;">
+    <h3>Book Appointment</h3>
     <form method="POST">
-        <label>Select Your Pet:</label>
-        <select name="pet_id" class="form-control mb-3" required>
-            <?php while($row = $pets->fetch_assoc()) { echo "<option value='".$row['pet_id']."'>".$row['pet_name']."</option>"; } ?>
-        </select>
-
-        <label>Select Service:</label>
-        <select name="service_id" class="form-control mb-3">
-            <?php while($row = $services->fetch_assoc()) { echo "<option value='".$row['service_id']."'>".$row['service_name']." (₱".$row['price'].")</option>"; } ?>
-        </select>
-
-        <label>Select Groomer:</label>
-        <select name="therapist_id" class="form-control mb-3">
-            <?php while($row = $groomers->fetch_assoc()) { echo "<option value='".$row['user_id']."'>".$row['full_name']."</option>"; } ?>
-        </select>
-
-        <label>Date:</label>
-        <input type="date" name="date" class="form-control mb-3" required>
-        <label>Time:</label>
-        <input type="time" name="time" class="form-control mb-3" required>
-
-        <button type="submit" class="btn btn-primary">Confirm Booking</button>
-        <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
+        <label>Pet:</label>
+        <select name="pet" class="form-control mb-2"><?php while($r=$pets->fetch_assoc()) echo "<option value='".$r['pet_id']."'>".$r['pet_name']."</option>"; ?></select>
+        <label>Service:</label>
+        <select name="service" class="form-control mb-2"><?php while($r=$srvs->fetch_assoc()) echo "<option value='".$r['service_id']."'>".$r['service_name']." (₱".$r['price'].")</option>"; ?></select>
+        <label>Groomer:</label>
+        <select name="therapist" class="form-control mb-2"><?php while($r=$thers->fetch_assoc()) echo "<option value='".$r['user_id']."'>".$r['full_name']."</option>"; ?></select>
+        <input type="date" name="date" class="form-control mb-2" required>
+        <input type="time" name="time" class="form-control mb-2" required>
+        <button class="btn btn-primary w-100">Book</button>
     </form>
 </body>
 </html>

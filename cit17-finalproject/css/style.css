@@ -1,0 +1,7 @@
+body { background-color: #fdfbf7; font-family: 'Segoe UI', sans-serif; }
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1000');
+    background-size: cover; height: 60vh; color: white; display: flex; align-items: center; justify-content: center;
+}
+.card { border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.navbar { background-color: #2c3e50; }
